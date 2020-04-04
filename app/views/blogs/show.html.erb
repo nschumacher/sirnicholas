@@ -12,7 +12,17 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @blog.status %>
+  <%= @blog.status.capitalize %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @blog.topic.title %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @blog.tag_list %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
