@@ -14,4 +14,12 @@ class Blog < ApplicationRecord
         self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
         self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
     end
+
+    def self.special_blogs
+        all
+    end
+    
+    def self.featured_blogs
+        limit(2)
+    end
 end
