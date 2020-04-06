@@ -25,5 +25,7 @@
   <%= @blog.tag_list %>
 </p>
 
+<%= image_tag @blog.thumb_image unless @blog.thumb_image.nil? %>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
