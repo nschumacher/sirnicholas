@@ -1,2 +1,14 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+body {
+    background-color: #1B2124;
+    color: #b5bcc3;
+}
+a {
+    color: #BCAC1A;
+}
+a:hover {
+    color: #988b18;
+    text-decoration: none;
+}
