@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.special_blogs
     @page_title = "SirNicholas.io | The Vault"
     @seo_keywords = "Nick Schumacher Salesforce Vault SirNicholas"
   end
