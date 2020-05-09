@@ -4,6 +4,7 @@
         <strong class="d-inline-block mb-2 text-primary">World</strong>
         <h3 class="mb-0"><%= blog.title %></h3>
         <div class="mb-1 text-muted"><%= blog.updated_at.strftime("%B %d, %Y") %></div>
+        <div class="mb-1 text-muted"><%= blog.status %></div>
         <p class="card-text mb-auto"><%= blog.body[0...180] %></p>
         <%= link_to 'Continue reading', blog %>
         <%= link_to 'Edit', edit_blog_path(blog) %> 
