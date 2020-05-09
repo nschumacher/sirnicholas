@@ -3,15 +3,11 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
     acts_as_taggable_on :tags
-    include Placeholder
 
     belongs_to :topic
     
-    validates_presence_of :title, :body, :main_image, :thumb_image
-    after_initialize :set_defaults
+    validates_presence_of :title, :body
 
-    def set_defaults
-        self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
-        self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
-    end
+    mount_uploader :main_image, VaultUploader # mount_uploader is a method provided by carrierwave
+    mount_uploader :thumb_image, VaultUploader # it stores a link to the image, which is the goal
 end
