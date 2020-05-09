@@ -1,7 +1,8 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "pages";
 @import "font-awesome";
-@import "jquery-ui";
+//@import "jquery-ui";
 
 body {
     background-color: #1B2124;
