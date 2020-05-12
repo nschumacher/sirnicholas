@@ -1,17 +1,50 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "pages";
+@import "blogs";
 @import "font-awesome";
 //@import "jquery-ui";
 
+$gold: #BCAC1A;
+$off-white: #b5bcc3;
+$page-background: #1B2124;
+
+/* ---------- Containers ---------- */
 body {
-    background-color: #1B2124;
-    color: #b5bcc3;
+    background-color: black;
+    color: $off-white;
 }
+section {
+    background-color: $page-background;
+}
+
+/* ---------- Links ---------- */
 a {
-    color: #BCAC1A;
+    color: $gold;
 }
 a:hover {
-    color: #988b18;
+    color: $gold;
     text-decoration: none;
+}
+
+/* ---------- Social Icons ---------- */
+.fav-icon-footer {
+    font-size: 25px;
+    color: $gold;
+}
+
+/* ---------- Auth Buttons ---------- */
+.btn-auth {
+    color: $gold;
+    margin: 0px 10px;
+    border-color: $gold;
+    width: 7rem;
+}
+.btn-auth:hover {
+    color: black !important;
+    background-color: $gold;
+    border-color: $gold;
+}
+.btn-auth:focus {
+    box-shadow: 0 0 0 0.2rem rgba($gold, 0.5);
 }
