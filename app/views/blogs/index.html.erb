@@ -1,15 +1,21 @@
 <section>
-<%= link_to 'New Blog', new_blog_path %>
-
 <div class="container">
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
+<div>&nbsp;</div>
+  <div class="jumbotron p-4 rounded" style="background: #14191C;">
+    <div class="col-md-12 px-0">
       <h1 class="display-4 font-italic">Welcome to the Vault</h1>
-      <p class="lead my-3">
-        The Vault serves as a place for me to take notes and share my thoughts, findings, and tips when I can.
+      <p class="lead my-4">
+        The Vault serves as my online notebook and blog. I'll share my notes, thoughts, findings, and tips when I can.
         I hope you find something useful!
       </p>
-      <p class="lead mb-0">** put my search bar here **</p>
+      <p class="lead mb-0">
+        ** put my search bar here **
+      </p>
+      <div style="text-align: right; margin-top: 10px;">
+        <%= link_to new_blog_path do %>
+          <%= icon('fas', 'plus', class: 'new-entry-icon') %>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -136,9 +142,9 @@
       <div class="p-4">
         <h4 class="font-italic">Elsewhere</h4>
         <ol class="list-unstyled">
-          <li><a href="#"><%= fa_icon "instagram" %></a></li>
-          <li><a href="#"><%= fa_icon "twitter" %></a></li>
-          <li><a href="#"><%= fa_icon "linkedin" %></a></li>
+          <li><a href="#"><%#= fa_icon "instagram" %></a></li>
+          <li><a href="#"><%#= fa_icon "twitter" %></a></li>
+          <li><a href="#"><%#= fa_icon "linkedin" %></a></li>
         </ol>
       </div>
     </aside><!-- /.blog-sidebar -->

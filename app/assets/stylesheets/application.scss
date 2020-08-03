@@ -1,13 +1,29 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
-@import "pages";
-@import "blogs";
-@import "font-awesome";
-//@import "jquery-ui";
-
 $gold: #BCAC1A;
 $off-white: #b5bcc3;
 $page-background: #1B2124;
+$section-background: #14191C;
+
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "navbar";
+@import "footer";
+@import "pages";
+@import "blogs";
+//@import "jquery-ui";
+
+/* ---------- Scrollbars ---------- */
+body::-webkit-scrollbar {
+    width: .2em;
+}
+body::-webkit-scrollbar-track {
+}
+body::-webkit-scrollbar-thumb {
+  background-color: gold;
+  border-radius: 10px;
+  outline: 1px solid gold;
+}
 
 /* ---------- Containers ---------- */
 body {
@@ -29,7 +45,7 @@ a:hover {
 
 /* ---------- Social Icons ---------- */
 .fav-icon-footer {
-    font-size: 25px;
+    font-size: 22px;
     color: $gold;
 }
 
@@ -38,7 +54,9 @@ a:hover {
     color: $gold;
     margin: 0px 10px;
     border-color: $gold;
-    width: 7rem;
+    width: 6rem;
+    font-size: 12px;
+    border-radius: 0px;
 }
 .btn-auth:hover {
     color: black !important;

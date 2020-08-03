@@ -12,7 +12,7 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'carrierwave-aws', '~> 1.5'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.12.0'
 gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
