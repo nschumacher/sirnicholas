@@ -5,8 +5,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.page(params[:page]).per(2)
-    @page_title = "SirNicholas.io | The Vault"
-    @seo_keywords = "Nick Schumacher Salesforce Vault SirNicholas"
+    @topics = Topic.all
+    @page_title = "The Round Table | SirNicholas.io"
+    @seo_keywords = "Nick Nicholas Schumacher Salesforce Round Table SirNicholas"
   end
 
   # GET /blogs/1
