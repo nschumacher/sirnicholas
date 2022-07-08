@@ -2,7 +2,7 @@
 
 <h1>The Round Table</h1>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
 
 <div class="container">
   <header class="blog-header py-3">
