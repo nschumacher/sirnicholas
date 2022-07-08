@@ -15,4 +15,30 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end
+
+    def alerts
+        alert = (flash[:alert] || flash[:error] || flash[:notice])
+        type = ''
+        if flash[:alert]
+            type = 'alert'
+        elsif flash[:error]
+            type = 'error'
+        else
+            type = 'notice'
+        end
+
+        if alert
+            alert_generator alert, type
+        end
+    end
+
+    def alert_generator msg, type
+        if type == 'alert'
+            js add_gritter(msg, title: "Heads Up!", sticky: false)
+        elsif type == 'error'
+            js add_gritter(msg,image: :error, title: "Hold Up!", sticky: false)
+        else
+            js add_gritter(msg, image: :notice, sticky: false)
+        end
+    end
 end
