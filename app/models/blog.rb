@@ -5,6 +5,7 @@ class Blog < ApplicationRecord
     acts_as_taggable_on :tags
 
     belongs_to :topic
+    has_many :comments, dependent: :destroy
     
     validates_presence_of :title, :body
 
