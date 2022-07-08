@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   resources :blogs
   resources :tags, only: [:index, :show]
+  
+  mount ActionCable.server => '/cable'
+
   root to: 'pages#home'
 end

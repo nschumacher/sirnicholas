@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<%= image_tag blog_img(@blog.main_image_url, 'main') %>
+<%= image_tag blog_img(@blog.main_image_url, 'main'), width: '100%' %>
 <br>
 <%= image_tag blog_img(@blog.thumb_image_url, 'thumb'), width: '200px' %>
 <p>
@@ -27,6 +25,15 @@
   <strong>Tags:</strong>
   <%= @blog.tag_list %>
 </p>
+
+<!-- comment form -->
+<%= render 'comments/comment_form' %>
+
+
+<!-- comment section -->
+<div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @blog.comments %>
+</div>
 
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |

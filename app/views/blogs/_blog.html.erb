@@ -7,8 +7,8 @@
         <div class="mb-1 text-muted"><%= blog.status %></div>
         <p class="card-text mb-auto"><%= blog.body[0...180] %></p>
         <%= link_to 'Continue reading', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) %> 
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %> 
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
         </div>
         <div class="col-auto d-none d-lg-block">
         <%= image_tag blog_img(blog.thumb_image_url, 'thumb'), width:"200px" %>

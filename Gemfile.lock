@@ -196,6 +196,8 @@ GEM
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    petergate (3.0.0)
+      activerecord (> 4.0.0)
     pg (1.4.1)
     popper_js (2.9.3)
     public_suffix (4.0.7)
@@ -234,6 +236,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -311,9 +314,11 @@ DEPENDENCIES
   kaminari
   listen
   mini_magick (~> 4.10, >= 4.10.1)
+  petergate (~> 3.0)
   pg (~> 1.1)
   puma (~> 3.11)
   rails (= 7.0.3)
+  redis (~> 4.6)
   sass-rails (~> 5.0)
   spring (= 3.0.0)
   turbolinks (~> 5)

@@ -3,3 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 @import "gritter";
+
+.comment-card > .card {
+    margin-top: 15px;
+    color: black;
+}
+
+.comment-attribution {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.comment-name {
+    font-weight: 700;
+}

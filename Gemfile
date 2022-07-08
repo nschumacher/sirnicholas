@@ -15,6 +15,8 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem "gritter", "1.2.0"
+gem 'redis', '~> 4.6'
+gem 'petergate', '~> 3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '7.0.3'
