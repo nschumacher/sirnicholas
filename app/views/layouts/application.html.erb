@@ -12,10 +12,12 @@
   </head>
 
   <body>
-    <%= render 'shared/nav', location: 'top' %>
-    <%= login_helper %>
-    <%= yield %>
+    <div class='container'>
+        <%= render 'shared/nav', location: 'top' %>
+        <%= login_helper %>
+        <%= yield %>
 
-    <%= alerts %>
+        <%= alerts %>
+    </div>
   </body>
 </html>
