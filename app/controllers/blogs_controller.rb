@@ -5,7 +5,11 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(2)
+    if logged_in?(:site_admin)
+        @blogs = Blog.recent.page(params[:page]).per(2) # for site admins to see
+    else
+        @blogs = Blog.published.recent.page(params[:page]).per(2) # for non-admins to see only published posts
+    end
     @topics = Topic.all
     @page_title = "The Round Table | SirNicholas.io"
     @seo_keywords = "Nick Nicholas Schumacher Salesforce Round Table SirNicholas"
