@@ -17,6 +17,8 @@ gem 'kaminari'
 gem "gritter", "1.2.0"
 gem 'redis', '~> 4.6'
 gem 'petergate', '~> 3.0'
+gem 'redcarpet', '~> 3.5', '>= 3.5.1'
+gem 'coderay', '~> 1.1', '>= 1.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '7.0.3'
