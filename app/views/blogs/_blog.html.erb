@@ -1,19 +1,20 @@
 <div class="col-md-6">
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary">World</strong>
-        <h3 class="mb-0"><%= blog.title %></h3>
-        <div class="mb-1 text-muted"><%= blog.updated_at.strftime("%B %d, %Y") %></div>
+            <strong class="d-inline-block mb-2 text-primary">World</strong>
+            <h3 class="mb-0"><%= link_to blog.title.upcase, blog %></h3>
+            <div class="mb-1 text-muted"><%= blog.updated_at.strftime("%B %d, %Y") %></div>
 
-        <div class="mb-1 text-muted"><%= link_to blog.status, toggle_status_blog_path(blog) %></div>
+            
 
-        <p class="card-text mb-auto"><%= blog.body[0...180] %></p>
-        <%= link_to 'Continue reading', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %> 
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+            <p class="card-text mb-auto"><%= blog.body[0...180] %></p>
+            <%= link_to 'Continue reading', blog %>
+            
+            <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+            
         </div>
         <div class="col-auto d-none d-lg-block">
-        <%= image_tag blog_img(blog.thumb_image_url, 'thumb'), width:"200px" %>
+            <%= image_tag blog_img(blog.thumb_image_url, 'thumb'), width:"200px" %>
         </div>
     </div>
 </div>
