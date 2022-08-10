@@ -8,13 +8,38 @@
 //@import "jquery-ui";
 
 body {
-    background-color: #1B2124;
+    background-color: #0E0E0E; // old background #1B2124
     color: #b5bcc3;
+    font-family: Montserrat;
 }
 a {
-    color: #BCAC1A;
+    color: #AD974F; // old gold: #BCAC1A
+    text-decoration: none !important;
 }
 a:hover {
-    color: #988b18;
-    text-decoration: none;
+    color: #796937 !important;
+    text-decoration: none !important;
+}
+
+.nav-link, .navbar-brand {
+    color: #AD974F !important; // Another gold option #AD844C
+    text-decoration: none !important;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: #796937 !important; 
+    text-decoration: none !important;
+    text-shadow: 2px 3px 5px black;
+}
+
+.nav-link.btn.btn-primary {
+    background-color: #202121;
+    border: 1px solid #AD974F;
+    padding: .65em;
+}
+.nav-link.btn.btn-primary:hover {
+    box-shadow: 2px 3px 6px #000000;
+}
+.navbar.bg-dark {
+    background-color: transparent !important;
 }

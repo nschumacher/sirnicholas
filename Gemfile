@@ -12,7 +12,10 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'carrierwave-aws', '~> 1.5'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
-gem 'font-awesome-rails'
+#gem 'font-awesome-rails', '~> 4.7.0.8'
+
+gem "font-awesome-sass", "~> 6.1.1"
+
 gem 'kaminari'
 gem "gritter", "1.2.0"
 gem 'redis', '~> 4.6'

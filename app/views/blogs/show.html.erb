@@ -1,52 +1,92 @@
 <%= image_tag blog_img(@blog.main_image_url, 'main'), width: '100%' %>
 <br>
 <%= image_tag blog_img(@blog.thumb_image_url, 'thumb'), width: '200px' %>
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @blog.topic.title %>
-</p>
+<div class="container">
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <span style="float: right">
+                <span class="mx-2">
+                    <%= link_to icon('fa-solid', 'file-lines'), toggle_status_blog_path(@blog), style: blog_status_color(@blog) %>
+                </span>
+                <span class="mx-2">
+                    <%= link_to icon('fa-solid', 'pen-to-square'), edit_blog_path(@blog) if logged_in?(:site_admin) %>
+                </span>
 
-<nav aria-label="breadcrumb">
-    <span class="pull-right">
-        <%= link_to fa_icon('pencil-square-o'), edit_blog_path(@blog) if logged_in?(:site_admin) %>
-        <%= link_to fa_icon('trash'), @blog, method: :destroy, data: { confirm: 'Are you sure you want to delete this post?' } if logged_in?(:site_admin) %>
-    </span>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><%= link_to 'The Round Table', blogs_path %></li>
-        <li class="breadcrumb-item"><%= link_to @blog.topic.title, topic_path(@blog.topic)%></li>
-        <li class="breadcrumb-item active" aria-current="page"><%= @blog.title %></li>
-    </ol>  
-</nav>
-
-<p>
-  <strong>Body:</strong>
-  <%= markdown @blog.body %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @blog.status.capitalize %>
-</p>
-
-<p>
-  <strong>Tags:</strong>
-  <%= @blog.tag_list %>
-</p>
-
-<!-- comment form -->
-<%= render 'comments/comment_form' %>
-
-
-<!-- comment section -->
-<div id="comments" data-blog-id="<%= @blog.id %>">
-    <%= render @blog.comments %>
+                <%= link_to icon('fa-solid', 'trash'), @blog, method: :destroy, data: { confirm: 'Are you sure you want to delete this post?' } if logged_in?(:site_admin) %>
+            </span>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><%= link_to 'The Round Table', blogs_path %></li>
+                <li class="breadcrumb-item"><%= link_to @blog.topic.title, topic_path(@blog.topic)%></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= @blog.title %></li>
+            </ol>  
+        </nav>
+    </div>
 </div>
 
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><%= @blog.title %></h2>
+        <div><%= @blog.topic.title %></div>
+        <p class="blog-post-meta"><%= @blog.updated_at.strftime("%B %d, %Y") %> by <a href="#">Nicholas Schumacher</a></p>
+        <div><%= markdown @blog.body %></div>
+        
+      </div><!-- /.blog-post -->
+
+      <div>
+        <p>
+        <strong>Tags:</strong>
+        <%= @blog.tag_list %>
+        </p>
+      </div>
+
+      <!-- comment form -->
+        <%= render 'comments/comment_form' %>
+
+
+        <!-- comment section -->
+        <div id="comments" data-blog-id="<%= @blog.id %>">
+            <%= render @blog.comments %>
+        </div>
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Related Articles</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">March 2014</a></li>
+          <li><a href="#">February 2014</a></li>
+          <li><a href="#">January 2014</a></li>
+          <li><a href="#">December 2013</a></li>
+          <li><a href="#">November 2013</a></li>
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="#"><%= icon('fa-brands', 'github')  %></a></li>
+          <li><a href="#"><%= icon('fa-brands', 'instagram') %></a></li>
+          <li><a href="#"><%= icon('fa-brands', 'twitter') %></a></li>
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
