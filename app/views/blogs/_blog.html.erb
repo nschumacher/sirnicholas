@@ -1,5 +1,5 @@
 <div class="col-12 mb-4">
-    <div class="p-3 border">
+    <div class="p-3" style="border: 2px solid #b5bcc3; border-radius: 3px;">
         <div class="row">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2">
@@ -14,14 +14,14 @@
                 <div class="card-text">
                     <%= markdown blog.body[0...300]+"..." %>
                 </div>
-                <%= link_to 'Continue reading', blog %>
+                <%= link_to 'CONTINUE READING', blog %>
                 <div class="mt-4">
                     <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
                 </div>
                 
             </div>
             <div class="col-auto d-none d-lg-block align-self-center">
-                <%= image_tag blog_img(blog.thumb_image_url, 'thumb'), width:"250px" %>
+                <%= image_tag blog_img(blog.thumb_image_url, 'thumb'), width:"350px" %>
             </div>
         </div>
     </div>

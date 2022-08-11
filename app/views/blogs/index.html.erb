@@ -19,19 +19,20 @@
   -->
 
   <div class="nav-scroller py-1 mb-2 mx-2 mt-5">
-    <nav class="nav d-flex justify-content-between">
+    <nav class="nav d-flex justify-content-between text-uppercase">
         <% @topics.each do |topic| %>
             <%= link_to topic.title, topic_path(topic) %>
         <% end %>
     </nav>
   </div>
 
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mb-4">
+  <div class="jumbotron p-4 p-md-5 rounded bg-dark mb-4">
     <div class="row">
         <div class="col-8">
-            <h1 class="display-4 font-italic">Welcome to the Round Table!</h1>
+            <h1 class="display-4 font-italic">Welcome to the <span style="color: #AD974F">Round Table!</span></h1>
             <p class="lead my-4">
-                I am here to share my thoughts and learn from others via constructive feedback and engaging discussions. Please leave comments so myself and others can grow together.
+                I am here to share my thoughts and learn from others via feedback and engaging discussions. 
+                There's always more room at the Round Table so please join the conversations and leave comments so we can all grow together.
             </p>
         </div>
         <div class="col-4" align="right">
