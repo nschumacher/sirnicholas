@@ -6,11 +6,11 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     if logged_in?(:site_admin)
-        @blogs = Blog.recent.page(params[:page]).per(2) # for site admins to see
+        @blogs = Blog.recent.page(params[:page]).per(2)# for site admins to see
     else
         @blogs = Blog.published.recent.page(params[:page]).per(2) # for non-admins to see only published posts
     end
-    @topics = Topic.all
+    @topics = Topic.all.order(updated_at: :asc)
     @page_title = "The Round Table | SirNicholas.io"
     @seo_keywords = "Nick Nicholas Schumacher Salesforce Round Table SirNicholas"
   end
@@ -25,7 +25,6 @@ class BlogsController < ApplicationController
 
         @page_title = @blog.title
         @seo_keywords = @blog.body
-
         @related_blogs = Blog.published.recent.where('topic_id = ? AND id != ?', @blog.topic.id, @blog.id).page(params[:page]) # for non-admins to see only published posts
     else
         redirect_to blogs_path, notice: "You are not authorized to access this page."

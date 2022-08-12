@@ -1,13 +1,16 @@
 <div class="">
     <h1><%= @topic.title %></h1>
     <p>
-        I am going to add a description to here to make it clear what this topic is going to encompass
+        <%= @topic.description %>
     </p>
 
     <%= paginate @blogs %>
 
     <p>
-        I should add an if render here to show a message if the topic doesn't currently have content.
+        <% if @blogs.empty? %>
+            Stay tuned! Content for this topic is being developed and will be made available soon. For now, please explore 
+            the other topics at the Round Table.
+        <% end %>
     </p>
     <%= render @blogs %>
 
