@@ -1,6 +1,9 @@
-<h1>Editing Blog</h1>
+<div style="float:right; margin-top: 15px;">
+    <%= link_to 'Show', @blog %> | <%= link_to 'Back', blogs_path %>
+</div>
+<h1>EDITING BLOG</h1>
+
 
 <%= render 'form', blog: @blog %>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+

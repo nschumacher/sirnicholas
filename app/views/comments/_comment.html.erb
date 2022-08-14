@@ -1,17 +1,17 @@
 <div class="comment-card">
-    <div class="card">
+    <div class="card" style="background: #202121; color: #b5bcc3; border: 1px solid #b5bcc3; padding: 10px;">
         <div class="card-block">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1" align="center">
                     <%= gravatar_helper comment.user %>
                 </div>
 
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <div>
                         <%= comment.content %>
                     </div>
 
-                    <div class="comment-attribution">
+                    <div class="comment-attribution" style="margin-top: 10px;">
                         <span class="comment-name"><%= comment.user.first_name %></span> | <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
                     </div>
                 </div>

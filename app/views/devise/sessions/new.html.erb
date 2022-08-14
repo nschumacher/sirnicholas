@@ -1,31 +1,36 @@
-<h2>Log in</h2>
+<div id="background-devise"></div>
+<div id="background-filter"></div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container-fluid" align="center" style="margin-top: 10%;">
+    <div class="row" align="center">
+        <span style="font-size: 2rem;"><h2>Welcome back to the <span class="gold-text"><i>ROUND TABLE</i></span></h2></span><br/>
     </div>
-  <% end %>
+    <div align="center" style="font-size: 1.2rem; margin-top: 3.2rem; background: rgba(0,0,0,.8); min-width: 50%; padding: 30px; display: inline-block;">
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+        
+            <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
 
-<%= render "devise/shared/links" %>
+            <% if devise_mapping.rememberable? %>
+                <div class="field">
+                <%= f.check_box :remember_me, style: 'min-width: 5%;' %>
+                <%= f.label :remember_me %>
+                </div>
+            <% end %>
+
+        
+            <div class="actions">
+                <%= f.submit "Log In", class: 'nav-link btn btn-primary', style: 'margin-bottom: 20px;' %>
+            </div>
+        <% end %>
+      
+        Are you new here? No worries! <%= render "devise/shared/links" %>
+    </div>
+</div>

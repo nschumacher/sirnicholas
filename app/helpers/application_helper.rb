@@ -1,9 +1,12 @@
 module ApplicationHelper
-    def login_helper style = ''
+    def login_helper style = 'nav-link'
         if current_user.is_a?(GuestUser)
+
+            "<li class='nav-item mx-2' align='right'>".html_safe + 
             (link_to "Register", new_user_registration_path, class: style) +
-            "<br>".html_safe +
-            (link_to "Login", new_user_session_path, class: style)
+            "</li><li class='nav-item mx-2' align='right'>".html_safe +
+            (link_to "Login", new_user_session_path, class: style) +
+            "</li>".html_safe
         else
             link_to "Logout", destroy_user_session_path, method: :delete, class: style
         end

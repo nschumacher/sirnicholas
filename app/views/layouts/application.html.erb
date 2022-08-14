@@ -3,21 +3,24 @@
   <head>
     <title><%= @page_title %></title>
     <meta name="keywords" content="<%= @seo_keywords%>" />
+    <%= favicon_link_tag 'sir_nicholas_logo_black.PNG' %>
     
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
 
   <body>
-    <div class='container'>
-        <%= render 'shared/nav', location: 'top' %>
-        <%= login_helper %>
+    <%= render 'shared/nav', location: 'top' %>
+    <div class='container' style='margin-bottom: 120px;'>
         <%= yield %>
-
         <%= alerts %>
     </div>
+    <%= render 'shared/footer', location: 'bottom'%>
   </body>
 </html>

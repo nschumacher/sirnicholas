@@ -1,5 +1,25 @@
 <div id="background"></div>
 <div id="background-filter"></div>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid" style="margin-top: 20%;">
+    <div class="row" align="center">
+        <span style="font-size: 2rem;">"Tell me and I forget, teach me and I may remember, involve me and I learn."</span><br/>
+        <span style="font-size: 1.2rem; padding-right: 6rem;" align="right">- BENJAMIN FRANKLIN</span>
+    </div>
+    <div align="center" style="font-size: 5.8rem; margin-top: 4rem;">
+        <span style="color: #AD974F;">
+            Join 
+        </span>
+        us at the
+        <span style="color: #AD974F; font-style: italic;">
+            Round Table
+        </span>
+        <span style="display: block; font-size: 1.8rem;">
+            where there's always room for more curious minds
+        </span>
+    </div>
+
+    <div align="center" style="margin-top: 6rem";>
+        <%= link_to "Enter the Round Table", blogs_path, class: 'btn btn-primary mx-3', style: 'font-size: 1.2rem; display: inline-block; color: #b5bcc3; background: #000;border: 1px solid #b5bcc3; padding: 15px;' %>
+    </div>
+</div>

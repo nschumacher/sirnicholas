@@ -1,14 +1,38 @@
-<div class="col-sm-8 blog-main">
-    <h1><%= @topic.title %></h1>
-    <p>
-        I am going to add a description to here to make it clear what this topic is going to encompass
-    </p>
+<div class="container">
 
-    <%= paginate @blogs %>
+    <div class="nav-scroller py-1 mb-2 mx-2 mt-5">
+        <nav class="nav d-flex justify-content-between text-uppercase">
+            <% @topics.each do |topic| %>
+                <%= link_to topic.title, topic_path(topic) %>
+            <% end %>
+        </nav>
+    </div>
+    <div style="max-height: 282px; position: relative; overflow: hidden;">
+        <% unless @topic.banner.nil? %>
+            <%= image_tag @topic.banner, width: '100%', style: 'transform: translateY(' + @topic.move + '%);' %>
+        <% end %>
+        <% if @topic.banner.nil? %>
+            <%= image_tag 'sir_nicholas_banner.JPG', width: '100%', style: '' %>
+        <% end %>
+    </div>
+    <div style="position: relative; top: -200px; left: 30px; width: 80%; padding: 20px; background: rgba(0,0,0, .7);">
+        <h1><%= @topic.title %></h1>
+        <div>
+            <%= @topic.description.html_safe %>
+        </div>
+    </div>
 
-    <p>
-        I should add an if render here to show a message if the topic doesn't currently have content.
-    </p>
+    <div style="margin-top: -160px;">
+        <%= paginate @blogs %>
+    </div>
+
+    <% if @blogs.empty? %>
+        <div style="background: #202121; margin-top: 6%; padding: 20px; border: 1px solid #b5bcc3; font-size: 1.2rem; text-align: center;">
+            Stay tuned! Content for this topic is being developed and will be made available soon. For now, please explore 
+            the other topics at the Round Table.
+        </div>
+    <% end %>
+
     <%= render @blogs %>
 
     <%= paginate @blogs %>
