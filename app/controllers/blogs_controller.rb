@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
     else
         @blogs = Blog.published.recent.page(params[:page]).per(2) # for non-admins to see only published posts
     end
-    @topics = Topic.all.order(updated_at: :asc)
+    @topics = Topic.all.order(id: :asc)
     @page_title = "The Round Table | SirNicholas.io"
     @seo_keywords = "Nick Nicholas Schumacher Salesforce Round Table SirNicholas"
   end

@@ -49,3 +49,15 @@ a:hover {
 .navbar.bg-dark {
     background-color: transparent !important;
 }
+.field input {
+    background: none;
+    color: #b5bcc3;
+    border: none;
+    border-bottom: 1px solid #AD974F;
+    margin-bottom: 36px;
+    min-width: 60%;
+    caret-color: #AD974F;
+}
+textarea:focus, input:focus{
+    outline: none;
+}

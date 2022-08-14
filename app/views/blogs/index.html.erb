@@ -26,16 +26,16 @@
     </nav>
   </div>
 
-  <div class="jumbotron p-4 p-md-5 rounded bg-dark mb-4">
-    <div class="row">
-        <div class="col-8">
+  <div class="jumbotron p-4 p-md-5 rounded mb-4" style="background: url(/assets/blogs_banner.jpg) no-repeat; background-size: cover; background-position: center;">
+    <div class="row" style="background: rgba(0,0,0, .6); padding: 20px;">
+        <div class="col-9">
             <h1 class="display-4 font-italic">Welcome to the <span style="color: #AD974F">Round Table!</span></h1>
             <p class="lead my-4">
                 I am here to share my thoughts and learn from others via feedback and engaging discussions. 
                 There's always more room at the Round Table so please join the conversations and leave comments so we can all grow together.
             </p>
         </div>
-        <div class="col-4" align="right">
+        <div class="col-3" align="right">
             <div style='height:100%; display:inline-block;'>&nbsp;</div>
             <div class="align-bottom" style="display:inline">
                 <%= link_to icon('fa-regular', 'plus', style:'font-size:40px;'), new_blog_path if logged_in?(:site_admin) %>
