@@ -12,7 +12,7 @@ salesforce.move = '-25'
 salesforce.save!
 
 devOps = Topic.find_or_initialize_by(title: 'DevOps')
-devOps.description = 'DevOps is more than just source control and CI/CD. DevOps encompasses everything from how and where stories are written and stored, how tasking is managed, the approach to source control (ie. branching strategies), development practices, environment management, deployment strategies, and more!'
+devOps.description = 'DevOps is more than just source control and CI/CD. DevOps encompasses everything from how and where stories are written and stored, to how tasking is managed, the approach to source control (ie. branching strategies), development practices, environment management, to deployment strategies and more!'
 devOps.banner = 'devOps_banner.jpg'
 devOps.move = '-22'
 devOps.save!
@@ -46,3 +46,11 @@ lifestyle.description = 'Lifestyle is my catch-all category where I can stash re
 lifestyle.banner = 'lifestyle_banner.jpg'
 lifestyle.move = '-38'
 lifestyle.save!
+
+User.create!(
+    email: "nick.schumacher07@gmail.com",
+    password: "letmeinnow",
+    password_confirmation: "letmeinnow",
+    name: "Admin",
+    roles: "site_admin"
+)
