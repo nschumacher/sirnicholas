@@ -63,3 +63,8 @@ a:hover {
 textarea:focus, input:focus{
     outline: none;
 }
+#blog-banner {
+    background: url(blogs_banner2.jpg) no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
