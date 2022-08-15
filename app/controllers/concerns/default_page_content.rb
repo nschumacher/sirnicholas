@@ -6,7 +6,7 @@ module DefaultPageContent
     end
 
     def set_page_defaults
-        @page_title = "SirNicholas.io | The Vault"
-        @seo_keywords = "Nick Schumacher Salesforce Vault SirNicholas"
+        @page_title = "SirNicholas.io | The Round Table"
+        @seo_keywords = "Nick Schumacher Salesforce SirNicholas"
     end
 end
