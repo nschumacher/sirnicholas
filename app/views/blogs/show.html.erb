@@ -40,7 +40,9 @@
         </div><!-- /.blog-post -->
 
         <!-- comment form -->
-        <%= render 'comments/comment_form' %>
+        <div style="margin-top: 30px;">
+            <%= render 'comments/comment_form' %>
+        </div>
 
         <!-- comment section -->
         <div id="comments" data-blog-id="<%= @blog.id %>" style="margin-bottom: 30px;">

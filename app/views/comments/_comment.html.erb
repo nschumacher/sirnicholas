@@ -12,7 +12,7 @@
                     </div>
 
                     <div class="comment-attribution" style="margin-top: 10px;">
-                        <span class="comment-name"><%= comment.user.first_name %></span> | <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+                        <span class="comment-name"><%= comment.user.name %></span> | <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
                     </div>
                 </div>
             </div>

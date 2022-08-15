@@ -46,11 +46,3 @@ lifestyle.description = 'Lifestyle is my catch-all category where I can stash re
 lifestyle.banner = 'lifestyle_banner.jpg'
 lifestyle.move = '-38'
 lifestyle.save!
-
-User.create!(
-    email: "nick.schumacher07@gmail.com",
-    password: "letmeinnow",
-    password_confirmation: "letmeinnow",
-    name: "Admin",
-    roles: "site_admin"
-)
