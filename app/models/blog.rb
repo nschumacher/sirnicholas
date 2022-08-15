@@ -3,6 +3,7 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
     acts_as_taggable_on :tags
+    has_rich_text :body
 
     validates_presence_of :title, :body, :topic_id
 

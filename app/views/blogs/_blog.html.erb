@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-text">
-                    <%= markdown blog.body[0...300]+"..." %>
+                    <%= blog.body.to_plain_text[0...300] + '...' %>
                 </div>
                 <%= link_to 'CONTINUE READING', blog %>
                 <div class="mt-4">

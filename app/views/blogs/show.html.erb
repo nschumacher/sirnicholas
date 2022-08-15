@@ -35,7 +35,7 @@
             <h2 class="blog-post-title"><%= @blog.title %></h2>
             <div class="gold-text"><%= @blog.topic.title %></div>
             <p class="blog-post-meta"><%= @blog.updated_at.strftime("%B %d, %Y") %> by <span class="gold-text">Nicholas Schumacher</span></p>
-            <div><%= markdown @blog.body %></div>
+            <div class="trix-content"><%= @blog.body %></div>
         
         </div><!-- /.blog-post -->
 
