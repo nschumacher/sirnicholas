@@ -26,7 +26,7 @@
     </nav>
   </div>
 
-  <div class="jumbotron p-4 p-md-5 rounded mb-4" id="blog-banner" style="">
+  <div class="jumbotron p-4 p-md-5 rounded mb-3" id="blog-banner" style="">
     <div class="row" style="background: rgba(0,0,0, .6); padding: 20px;">
         <div class="col-9">
             <h1 class="display-4 font-italic">Welcome to the <span style="color: #AD974F">Round Table!</span></h1>
@@ -46,11 +46,13 @@
 
   <div class="row mb-2">
     <div class="container px-4">
+        <div class="mb-3">
+            <%= paginate @blogs, style: 'margin-bottom:10px;' %>
+        </div>
         <div class="row shadow-sm">
             <%= render @blogs %>
         </div>
         <%= paginate @blogs %>
     </div>
-    
   </div>
 </div>

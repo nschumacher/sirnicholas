@@ -6,9 +6,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     if logged_in?(:site_admin)
-        @blogs = Blog.recent.page(params[:page]).per(2)# for site admins to see
+        @blogs = Blog.recent.page(params[:page]).per(5)# for site admins to see
     else
-        @blogs = Blog.published.recent.page(params[:page]).per(2) # for non-admins to see only published posts
+        @blogs = Blog.published.recent.page(params[:page]).per(5) # for non-admins to see only published posts
     end
     @topics = Topic.all.order(id: :asc)
     @page_title = "The Round Table | SirNicholas.io"
