@@ -29,10 +29,19 @@
 
 <main role="main" class="container">
   <div class="row">
-    <div class="col-md-8 blog-main">
+    <div class="col-sm-12 col-lg-8 blog-main" id="blog-main">
 
         <div class="blog-post">
-            <h2 class="blog-post-title"><%= @blog.title %></h2>
+            <div class="row">
+                <div class="col-sm-11">
+                    <h2 class="blog-post-title">
+                        <%= @blog.title %>
+                    </h2>
+                </div>
+                <div class="col-sm-1">
+                    <a onclick="myFunction()" style=""><%= icon('fa-solid', 'up-right-and-down-left-from-center')  %></a>
+                </div>
+            </div>
             <div class="gold-text"><%= @blog.topic.title %></div>
             <p class="blog-post-meta"><%= @blog.updated_at.strftime("%B %d, %Y") %> by <span class="gold-text">Nicholas Schumacher</span></p>
             <div class="trix-content"><%= @blog.body %></div>
@@ -50,7 +59,7 @@
         </div>
     </div><!-- /.blog-main -->
 
-    <aside class="col-md-4 blog-sidebar">
+    <aside class="col-lg-4 blog-sidebar" id="blog-sidebar">
       <div class="p-4 mb-3 rounded" style="background: #202121; color: #b5bcc3;">
         <h5 class="font-italic" style="color: #AD974F">About this Topic</h5>
         <p class="mb-0"><%= @blog.topic.description.html_safe %></p>
@@ -102,3 +111,13 @@
   </div><!-- /.row -->
 
 </main><!-- /.container -->
+
+<script>
+function myFunction() {
+   var element = document.getElementById("blog-sidebar");
+   element.classList.toggle("hidden");
+
+   var blogBody = document.getElementById("blog-main");
+   blogBody.classList.toggle("col-lg-8");
+}
+</script>
